@@ -1,0 +1,127 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'samples/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.1
+
+# FIXME: Make the class shorter
+Metrics/ClassLength:
+  Exclude:
+    - lib/reek/context_builder.rb
+    - lib/reek/cli/options.rb
+
+# FIXME: Lower the method length by fixing the biggest offenders
+Metrics/MethodLength:
+  Max: 15
+
+# Be rather lenient with line length
+Metrics/LineLength:
+  Max: 120
+
+# Keyword arguments make long parameter lists readable
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+# FIXME: Update specs to avoid offenses
+RSpec/AnyInstance:
+  Exclude:
+    - 'spec/reek/cli/application_spec.rb'
+
+# This file does not test a class
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/quality/reek_source_spec.rb'
+
+# Our examples are large because we have source literals in them
+RSpec/ExampleLength:
+  Enabled: false
+
+# FIXME: Split up files to avoid offenses
+RSpec/MultipleDescribes:
+  Exclude:
+    - 'spec/reek/ast/sexp_extensions_spec.rb'
+    - 'spec/reek/report/location_formatter_spec.rb'
+
+# FIXME: Update specs to avoid offenses
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/reek/cli/application_spec.rb'
+    - 'spec/reek/code_comment_spec.rb'
+    - 'spec/reek/configuration/app_configuration_spec.rb'
+    - 'spec/reek/context/module_context_spec.rb'
+    - 'spec/reek/context_builder_spec.rb'
+    - 'spec/reek/examiner_spec.rb'
+    - 'spec/reek/spec/should_reek_of_spec.rb'
+
+# FIXME: Update specs to avoid offenses
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/reek/cli/application_spec.rb'
+
+# FIXME: Update specs to avoid offenses
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/reek/context/code_context_spec.rb'
+    - 'spec/reek/context/method_context_spec.rb'
+    - 'spec/reek/context/module_context_spec.rb'
+
+Style/AccessorMethodName:
+  Exclude:
+    - 'lib/reek/context/visibility_tracker.rb'
+
+Style/Documentation:
+  Exclude:
+    - 'lib/reek/ast/sexp_extensions/send.rb'
+    - 'lib/reek/ast/sexp_extensions/super.rb'
+    - 'lib/reek/ast/sexp_extensions/variables.rb'
+
+# Place . on the previous line
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# Require empty lines between defs, except for one-line defs
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+# Require comment for files in lib and bin
+Style/FrozenStringLiteralComment:
+  Include:
+    - 'bin/*'
+    - 'lib/**/*'
+  EnforcedStyle: always
+
+# Allow multiline block chains
+Style/MultilineBlockChain:
+  Enabled: false
+
+# Always put the closing brace on the last line
+Style/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
+
+# Indent one level for follow-up lines
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Indent one level for follow-up lines
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# There's nothing wrong with parallel assignment
+Style/ParallelAssignment:
+  Enabled: false
+
+# Allow Perl-style references to regex matches
+Style/PerlBackrefs:
+  Enabled: false
+
+# Allow single-line method definitions
+Style/SingleLineMethods:
+  Enabled: false
+
+# Allow small arrays of words with quotes
+Style/WordArray:
+  MinSize: 4

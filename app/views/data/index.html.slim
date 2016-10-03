@@ -1,0 +1,52 @@
+p#notice
+  = notice
+
+h1 Listing Data
+table
+  thead
+    tr
+      th Name
+      - content_tag :th, colspan: "3"
+  tbody
+    - @data.each do |d|
+      tr
+        td
+          = d.name
+        td
+          = link_to 'Show', d
+        td
+          = link_to 'Edit', edit_datum_path(d)
+        td
+          = link_to 'Destroy', d, method: :delete, data: { confirm: 'Are you sure?' }
+
+br
+
+= link_to 'New Datum', new_datum_path
+
+/ <p id="notice"><%= notice %></p>
+
+/ <h1>Listing Data</h1>
+
+/ <table>
+/   <thead>
+/     <tr>
+/       <th>Name</th>
+/       <th colspan="3"></th>
+/     </tr>
+/   </thead>
+
+/   <tbody>
+/     <% @data.each do |datum| %>
+/       <tr>
+/         <td><%= datum.name %></td>
+/         <td><%= link_to 'Show', datum %></td>
+/         <td><%= link_to 'Edit', edit_datum_path(datum) %></td>
+/         <td><%= link_to 'Destroy', datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+/       </tr>
+/     <% end %>
+/   </tbody>
+/ </table>
+
+/ <br>
+
+/ <%= link_to 'New Datum', new_datum_path %>
