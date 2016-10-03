@@ -12,8 +12,12 @@ table
       tr
         td
           = d.name
-        td
-          = audio_tag d.audio.url, controls: true
+        - if d.audio?
+          td
+            = audio_tag d.audio.url, controls: true
+        - if d.video?
+          td
+            = video_tag d.video.url(:medium), controls: true
         td
           = link_to 'Show', d
         td
