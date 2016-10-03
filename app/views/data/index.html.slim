@@ -13,6 +13,8 @@ table
         td
           = d.name
         td
+          = audio_tag d.audio.url, controls: true
+        td
           = link_to 'Show', d
         td
           = link_to 'Edit', edit_datum_path(d)
