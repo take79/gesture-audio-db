@@ -1,0 +1,28 @@
+p#notice
+  = notice
+
+p
+  strong Name:
+  = @datum.name
+
+- if @datum.gesture?
+    .playback
+      #slider
+      button#play_pause.fa
+      span#currentframe style="display:inline-block;width:4em;tex-align:right;"
+        | /
+      span#totalframe style="display:inline-block;width:4em;text-align:right;"
+      button#loop_toggle.fa
+
+= link_to 'Edit', edit_datum_path(@datum)
+= link_to 'Back', data_path
+
+/<p id="notice"><%= notice %></p>
+
+/<p>
+/  <strong>Name:</strong>
+/  <%= @datum.name %>
+/</p>
+/
+/<%= link_to 'Edit', edit_datum_path(@datum) %> |
+/<%= link_to 'Back', data_path %>

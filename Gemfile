@@ -44,6 +44,9 @@ gem 'paperclip'
 # Audio/Video Transcoder for Paperclip using FFMPEG/Avconv
 gem 'paperclip-av-transcoder'
 
+# for three.js on rails
+gem 'threejs-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

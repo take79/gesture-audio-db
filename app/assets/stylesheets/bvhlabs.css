@@ -1,0 +1,8 @@
+#container { position:absolute; top:0; left:0; }
+#guiContener { position:absolute; overflow-x:auto; height:100%; width:215px; top: 0; left: 0;}
+#out2 { position:absolute; bottom:30px; right:6px; text-align: right; font-size:10px; }
+#out1 { position:absolute; bottom:30px; left:6px; text-align: left; font-size:10px; }
+#files { position:absolute; bottom:6px; left:10px;}
+#debug { position:absolute; top:6px; left:6px; text-align:left; }
+#b3 { position:absolute; top:6px; right:6px; width:90px; height:20px; }
+#b4 { position:absolute; top:36px; right:6px; width:90px; height:20px; }
