@@ -10,5 +10,5 @@ class Datum < ActiveRecord::Base
     #どのMIME形式を許可するか、ないとエラーになる
     validates_attachment_content_type :audio, content_type: ["audio/mpeg", "audio/x-wav"]
     validates_attachment_content_type :video, content_type: ["video/x-msvideo"]
-    validates_attachment_file_name :geture, matches: [/bvh\z/]
+    validates_attachment_file_name :gesture, matches: [/bvh\z/]
 end
