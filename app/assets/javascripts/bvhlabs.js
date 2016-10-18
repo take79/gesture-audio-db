@@ -3,7 +3,8 @@ var bvhlabs;
 (function (bvhlabs) {
     var ToRad = Math.PI / 180;
     //const ToDeg = 180 / Math.PI;
-    var BVH_FILE = '85_09.bvh';
+    //var BVH_FILE = '/assets/gestures/18/Down.bvh'
+    var BVH_FILE;
     var Renderer = (function () {
         function Renderer() {
             this.bones = [];
@@ -12,6 +13,10 @@ var bvhlabs;
         }
         Renderer.prototype.init = function ($container) {
             this.$container = $container;
+            console.log($container);
+            BVH_FILE = this.$container.attr('data-src');
+            $container.width(500)
+            $container.height(500)
             this.$currentframe = $('#currentframe');
             this.$out1 = $('#ou1');
             this.$out2 = $('#out2');
@@ -52,9 +57,9 @@ var bvhlabs;
             this.renderer.gammaOutput = true;
             $container.append(this.renderer.domElement);
             this.scene = new THREE.Scene();
-            this.camera = new THREE.PerspectiveCamera(40, $container.width() / $container.height(), 1, 3000);
-            this.camera.position.z = 100;
-            this.camera.position.y = 50.0;
+            this.camera = new THREE.PerspectiveCamera(50, $container.width() / $container.height(), 1, 3000);
+            this.camera.position.z = 200;
+            this.camera.position.y = 200;
             this.controls = new THREE.TrackballControls(this.camera, $container[0]);
             this.controls.rotateSpeed = 1.0;
             this.controls.zoomSpeed = 1.2;
@@ -64,6 +69,7 @@ var bvhlabs;
             this.controls.staticMoving = true;
             this.controls.dynamicDampingFactor = 0.3;
             this.controls.keys = [65, 83, 68];
+            this.controls.target = new THREE.Vector3(0, 120, 0);
             this.controls.update();
             // light
             this.scene.add(new THREE.AmbientLight(0x505050));

@@ -6,6 +6,8 @@ p
   = @datum.name
 
 - if @datum.gesture?
+  .container
+    #renderer data-src=@datum.gesture.url
     .playback
       #slider
       button#play_pause.fa
