@@ -140,14 +140,14 @@ var bvhlabs;
             });
             this.slider = $slider[0].noUiSlider;
             $('#totalframe').text(data.seconds.toFixed(2));
-            var speed = 0.5;
+            var speed = 1.0;
             this.bvhplayer.speed = speed;
             this.addSkeleton(data);
             this.$out2.html(data.getNodeList());
             this.distances = data.getDistanceList();
             this.debugTell(data.getDebugTell());
-            this.start();
-            this.setEnableLoop();
+            this.stop();
+            this.setDisableLoop();
         };
         Renderer.prototype.start = function () {
             this.bvhplayer.start();
