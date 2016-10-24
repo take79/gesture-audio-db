@@ -50,6 +50,9 @@ gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 # font awsome
 gem 'font-awesome-rails'
 
+# nouislider
+gem 'nouislider-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
