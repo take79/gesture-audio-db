@@ -20,7 +20,11 @@ p
 - if @datum.audio?
   = audio_tag @datum.audio.url, controls: true, id: "audio"
 - if @datum.gesture? && @datum.audio? && @datum.video?
-  button#sync-play 同時再生
+  p
+    button#av-sync-play 音声・動画同時再生
+    button#ag-sync-play 音声・ジェスチャ同時再生
+    button#vg-sync-play 動画・ジェスチャ同時再生
+    button#all-sync-play すべて同時再生
 ul
   li
     = link_to 'Edit', edit_datum_path(@datum)
