@@ -15,12 +15,17 @@ p
         | /
       span#totalframe style="display:inline-block;width:4em;text-align:right;"
       button#loop_toggle.fa
-- if @datum.audio?
-  = audio_tag @datum.audio.url, controls: true
 - if @datum.video?
-  = video_tag @datum.video.url, controls: true, width: '500'
-= link_to 'Edit', edit_datum_path(@datum)
-= link_to 'Back', data_path
+  = video_tag @datum.video.url, controls: true, id: "video", width: '500'
+- if @datum.audio?
+  = audio_tag @datum.audio.url, controls: true, id: "audio"
+- if @datum.gesture? && @datum.audio? && @datum.video?
+  button#sync-play 同時再生
+ul
+  li
+    = link_to 'Edit', edit_datum_path(@datum)
+  li
+    = link_to 'Back', data_path
 
 /<p id="notice"><%= notice %></p>
 

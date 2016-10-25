@@ -13,7 +13,6 @@ var bvhlabs;
         }
         Renderer.prototype.init = function ($container) {
             this.$container = $container;
-            console.log($container);
             BVH_FILE = this.$container.attr('data-src');
             $container.width(500)
             $container.height(500)
@@ -293,5 +292,6 @@ var bvhlabs;
 })(bvhlabs || (bvhlabs = {}));
 $(function () {
     bvhlabs.init($('#renderer'));
+    console.log("init")
 });
 
