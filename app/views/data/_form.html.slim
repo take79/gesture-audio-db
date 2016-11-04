@@ -24,6 +24,8 @@
   .actions
     = f.submit
 
+= video_tag controls: true, id: "v-preview", width: '500', hidden: true
+= audio_tag controls: true, id: "a-preview", hidden: true
 
 / <%= form_for(@datum) do |f| %>
 /   <% if @datum.errors.any? %>
