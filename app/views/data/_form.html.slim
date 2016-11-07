@@ -26,7 +26,15 @@
 
 = video_tag controls: true, id: "v-preview", width: '500', hidden: true
 = audio_tag controls: true, id: "a-preview", hidden: true
-
+.container#g-preview hidden=true
+  #renderer data-src=@datum.gesture.url
+  .playback
+    #slider style="width: 500px"
+    button#play_pause.fa
+    span#currentframe style="display:inline-block;width:4em;tex-align:right;"
+      | /
+    span#totalframe style="display:inline-block;width:4em;text-align:right;"
+    button#loop_toggle.fa
 / <%= form_for(@datum) do |f| %>
 /   <% if @datum.errors.any? %>
 /     <div id="error_explanation">
