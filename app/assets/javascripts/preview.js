@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(document).on('turbolinks:load', function(){
   console.log(document.getElementById("datum_video"));
   document.getElementById("datum_video").addEventListener('change', function (event) {
     var URL = URL || webkitURL;
@@ -17,5 +17,6 @@ $(window).load(function(){
     var file = event.target.files[0];
     $('#renderer').attr('data-src', URL.createObjectURL(file));
     $("#g-preview").show();
+    bvhlabs.init($('#renderer'));
   }, false);
 })

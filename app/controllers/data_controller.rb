@@ -10,6 +10,7 @@ class DataController < ApplicationController
   # GET /data/1
   # GET /data/1.json
   def show
+    render layout: 'show'
   end
 
   # GET /data/new
