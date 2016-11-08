@@ -12,7 +12,7 @@ var bvhlabs;
             this.nodesMesh = [];
         }
         Renderer.prototype.init = function ($container) {
-            console.log("bvhinit");
+            //console.log("bvhinit");
             this.$container = $container;
             BVH_FILE = this.$container.attr('data-src');
             $container.width(500)
@@ -39,7 +39,7 @@ var bvhlabs;
             this.init3D($container);
             this.loadBVH(BVH_FILE);
             this.animate();
-            console.log("bvhinitend");
+            //console.log("bvhinitend");
         };
         Renderer.prototype.debugTell = function (s) {
             this.$debug.html(s);

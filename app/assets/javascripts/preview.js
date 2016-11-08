@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  console.log(document.getElementById("datum_video"));
+  //console.log(document.getElementById("datum_video"));
   document.getElementById("datum_video").addEventListener('change', function (event) {
     var URL = URL || webkitURL;
     var file = event.target.files[0];
