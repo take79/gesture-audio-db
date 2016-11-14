@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+  <div class= "field">
+    <%= f.label :gender %><br>
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label "gender-m", "male" %>
+    <%= f.radio_button :gender, "female" %>
+    <%= f.label "gender-f", "female" %><br>
+  </div>
+  <div class= "field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

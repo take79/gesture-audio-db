@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20161114061811) do
 
   create_table "actors", force: :cascade do |t|
-    t.integer  "gender",     limit: 4
+    t.string   "gender",     limit: 255
     t.integer  "age",        limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "data", force: :cascade do |t|
