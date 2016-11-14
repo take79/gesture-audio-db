@@ -1,0 +1,1 @@
+json.array! @gesture_tags, partial: 'gesture_tags/gesture_tag', as: :gesture_tag

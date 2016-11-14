@@ -1,0 +1,17 @@
+<%= form_for(@gesture_tag) do |f| %>
+  <% if @gesture_tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gesture_tag.errors.count, "error") %> prohibited this gesture_tag from being saved:</h2>
+
+      <ul>
+      <% @gesture_tag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
