@@ -69,6 +69,6 @@ class GestureTagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gesture_tag_params
-      params.fetch(:gesture_tag, {})
+      params.require(:gesture_tag).permit(:metaphoric, :iconic, :deictic, :beat)
     end
 end

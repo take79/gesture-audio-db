@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114061811) do
+ActiveRecord::Schema.define(version: 20161114061303) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "gender",     limit: 255
     t.integer  "age",        limit: 4
+    t.integer  "datum_id",   limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -36,9 +37,6 @@ ActiveRecord::Schema.define(version: 20161114061811) do
     t.string   "gesture_content_type", limit: 255
     t.integer  "gesture_file_size",    limit: 4
     t.datetime "gesture_updated_at"
-    t.integer  "topic_id",             limit: 4
-    t.integer  "actor_id",             limit: 4
-    t.integer  "gesture_tag_id",       limit: 4
   end
 
   create_table "gesture_tags", force: :cascade do |t|
@@ -46,11 +44,13 @@ ActiveRecord::Schema.define(version: 20161114061811) do
     t.integer "iconic",     limit: 4
     t.integer "deictic",    limit: 4
     t.integer "beat",       limit: 4
+    t.integer "datum_id",   limit: 4
   end
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.datetime "recorded_date"
+    t.integer  "datum_id",      limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end

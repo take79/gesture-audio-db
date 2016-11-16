@@ -5,6 +5,7 @@ class CreateGestureTag < ActiveRecord::Migration
       t.integer :iconic
       t.integer :deictic
       t.integer :beat
+      t.integer :datum_id
     end
   end
 end

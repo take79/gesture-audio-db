@@ -10,8 +10,16 @@
   </thead>
 
   <tbody>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>recorded date</th>
+    </tr>
     <% @topics.each do |topic| %>
       <tr>
+        <td><%= topic.id %></td>
+        <td><%= topic.name %></td>
+        <td><%= topic.recorded_date %></td>
         <td><%= link_to 'Show', topic %></td>
         <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
         <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>

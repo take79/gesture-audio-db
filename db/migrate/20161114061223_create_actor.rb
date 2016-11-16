@@ -3,6 +3,7 @@ class CreateActor < ActiveRecord::Migration
     create_table :actors do |t|
       t.string :gender
       t.integer :age
+      t.integer :datum_id
 
       t.timestamps null: false
     end

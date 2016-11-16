@@ -10,8 +10,20 @@
   </thead>
 
   <tbody>
+    <tr>
+      <th>id</th>
+      <th>metaphoric</th>
+      <th>iconic</th>
+      <th>deictic</th>
+      <th>beat</th>
+    </tr>
     <% @gesture_tags.each do |gesture_tag| %>
-      <tr>
+      <tr align="right">
+        <td><%= gesture_tag.id %></td>
+        <td><%= gesture_tag.metaphoric %>
+        <td><%= gesture_tag.iconic %>
+        <td><%= gesture_tag.deictic %>
+        <td><%= gesture_tag.beat %>
         <td><%= link_to 'Show', gesture_tag %></td>
         <td><%= link_to 'Edit', edit_gesture_tag_path(gesture_tag) %></td>
         <td><%= link_to 'Destroy', gesture_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>

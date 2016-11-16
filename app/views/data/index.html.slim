@@ -8,10 +8,21 @@ table
       th Name
       - content_tag :th, colspan: "3"
   tbody
+    tr
+      th id
+      th name
+      th topic
+      th actor
     - @data.each do |d|
-      tr
+      tr align="right"
+        td
+          = d.id
         td
           = d.name
+        td
+          = d.topic.try(:id) || "nil"
+        td
+          = d.actor.try(:id) || "nil"
         td
           = link_to 'Show', d
         td

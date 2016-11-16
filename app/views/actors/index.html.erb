@@ -10,11 +10,18 @@
   </thead>
 
   <tbody>
-    <% @actors.each do |actor| %>
-      <tr>
-        <td><%= link_to 'Show', actor %></td>
-        <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
-        <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <tr>
+      <th>id</th>
+      <th>gender</th>
+      <th>age</th>
+    <% @actors.each do |a| %>
+      <tr align="right">
+        <td><%= a.id %></td>
+        <td><%= a.gender %></td>
+        <td><%= a.age %></td>
+        <td><%= link_to 'Show', a %></td>
+        <td><%= link_to 'Edit', edit_actor_path(a) %></td>
+        <td><%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

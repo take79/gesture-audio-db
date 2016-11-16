@@ -21,6 +21,9 @@
   .field
     = f.label :gesture
     = f.file_field :gesture
+  .field
+    = f.label :actor
+    = f.collection_select :actor, Actor.all
   .actions
     = f.submit
 
