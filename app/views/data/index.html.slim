@@ -20,9 +20,9 @@ table
         td
           = d.name
         td
-          = d.try(:topic_id) || "nil"
+          = d.topic.try(:id) || "nil"
         td
-          = d.try(:actor_id) || "nil"
+          = d.actor.try(:id) || "nil"
         td
           = link_to 'Show', d
         td
