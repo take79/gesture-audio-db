@@ -12,11 +12,13 @@
   <tbody>
     <tr>
       <th>id</th>
+      <th>name</th>
       <th>gender</th>
       <th>age</th>
     <% @actors.each do |a| %>
       <tr align="right">
         <td><%= a.id %></td>
+        <td><%= a.name %></td>
         <td><%= a.gender %></td>
         <td><%= a.age %></td>
         <td><%= link_to 'Show', a %></td>
@@ -30,3 +32,4 @@
 <br>
 
 <%= link_to 'New Actor', new_actor_path %>
+<%= link_to 'Back', data_path %>
