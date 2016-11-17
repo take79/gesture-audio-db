@@ -1,3 +1,3 @@
 class Topic < ActiveRecord::Base
-  belongs_to :datum
+  has_many :datum
 end

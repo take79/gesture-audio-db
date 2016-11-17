@@ -23,7 +23,10 @@
     = f.file_field :gesture
   .field
     = f.label :actor
-    = f.collection_select :actor, Actor.all
+    = f.collection_select :actor_id, Actor.all, :id, :id
+  .field
+    = f.label :topic
+    = f.collection_select :topic_id, Topic.all, :id, :name
   .actions
     = f.submit
 
