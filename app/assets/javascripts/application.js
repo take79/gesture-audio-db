@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require nouislider
 //= require three.min.js
 //= require_tree .
