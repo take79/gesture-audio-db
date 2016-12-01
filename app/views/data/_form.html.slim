@@ -27,6 +27,9 @@
   .field
     = f.label :topic
     = f.collection_select :topic_id, Topic.all, :id, :name
+  .field
+    = f.label :keywords
+    = f.text_field :keywords
   .actions
     = f.submit
 

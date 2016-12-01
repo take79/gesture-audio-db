@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117145649) do
+ActiveRecord::Schema.define(version: 20161201091135) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20161117145649) do
     t.integer  "actor_id",             limit: 4
     t.integer  "topic_id",             limit: 4
     t.integer  "gesture_tag_id",       limit: 4
+    t.string   "keywords",             limit: 255
   end
 
   create_table "gesture_tags", force: :cascade do |t|

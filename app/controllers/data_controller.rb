@@ -69,6 +69,6 @@ class DataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def datum_params
-      params.require(:datum).permit(:name, :audio, :video, :gesture, :actor_id, :topic_id, :gesture_tag_id)
+      params.require(:datum).permit(:name, :audio, :video, :gesture, :actor_id, :topic_id, :gesture_tag_id, :keywords)
     end
 end
