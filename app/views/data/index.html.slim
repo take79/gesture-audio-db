@@ -47,6 +47,9 @@ table
           = link_to 'Destroy', d, method: :delete, data: { confirm: 'Are you sure?' }
 
 br
+= paginate(@data)
+
+br
 
 = link_to 'New Datum', new_datum_path
 br

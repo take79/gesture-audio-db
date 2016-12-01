@@ -6,7 +6,7 @@ class DataController < ApplicationController
   def index
     #@data = Datum.all
     @q = Datum.search(params[:q])
-    @data = @q.result(distinct: true)
+    @data = @q.result(distinct: true).page(params[:page]).per(20)
   end
 
   # GET /data/1
