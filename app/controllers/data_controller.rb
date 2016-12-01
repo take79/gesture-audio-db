@@ -15,10 +15,14 @@ class DataController < ApplicationController
   # GET /data/new
   def new
     @datum = Datum.new
+    @datum.build_gesture_tag
   end
 
   # GET /data/1/edit
   def edit
+    if @datum.gesture_tag.nil?
+      @datum.build_gesture_tag
+    end
   end
 
   # POST /data
@@ -69,6 +73,6 @@ class DataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def datum_params
-      params.require(:datum).permit(:name, :audio, :video, :gesture, :actor_id, :topic_id, :gesture_tag_id, :keywords)
+      params.require(:datum).permit(:name, :audio, :video, :gesture, :actor_id, :topic_id, :gesture_tag_id, :keywords, gesture_tag_attributes: [:iconic, :metaphoric, :deictic, :beat])
     end
 end

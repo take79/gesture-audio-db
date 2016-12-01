@@ -2,6 +2,7 @@ class Datum < ActiveRecord::Base
   belongs_to :actor
   belongs_to :topic
   has_one :gesture_tag
+  accepts_nested_attributes_for :gesture_tag
   has_attached_file :audio, url: "/assets/audios/:id/:basename.:extension", path: "#{Rails.root}/public/assets/audios/:id/:basename.:extension"
   has_attached_file :video, url: "/assets/videos/:id/:basename.:extension", path: "#{Rails.root}/public/assets/videos/:id/:basename.:extension",
   :styles => {

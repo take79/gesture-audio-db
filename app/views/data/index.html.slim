@@ -13,6 +13,7 @@ table
       th name
       th topic
       th actor
+      th keywords
     - @data.each do |d|
       tr align="right"
         td
@@ -23,6 +24,8 @@ table
           = d.topic.try(:id) || "nil"
         td
           = d.actor.try(:id) || "nil"
+        td
+          = d.try(:keywords) || "none"
         td
           = link_to 'Show', d
         td

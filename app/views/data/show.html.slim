@@ -2,8 +2,16 @@ p#notice
   = notice
 
 p
-  strong Name:
-  = @datum.name
+  strong Data:
+  p Name:#{@datum.name}
+  p = link_to "Actor:#{@datum.actor.name}", actor_path(@datum.actor)
+  p = link_to "Topic:#{@datum.topic.name}", topic_path(@datum.topic)
+  p Tags:
+    Iconic:#{@datum.gesture_tag.iconic}
+    | Metaphoric:#{@datum.gesture_tag.metaphoric}
+    | Deictic:#{@datum.gesture_tag.deictic}
+    | Beat:#{@datum.gesture_tag.beat}
+  p Keywords: #{@datum.keywords}
 
 - if @datum.gesture?
   .container

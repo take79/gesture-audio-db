@@ -30,6 +30,19 @@
   .field
     = f.label :keywords
     = f.text_field :keywords
+  = f.fields_for :gesture_tag do |g|
+    .field
+      = g.label:iconic
+      = g.text_field :iconic
+    .field
+      = g.label :metaphoric
+      = g.text_field :metaphoric
+    .field
+      = g.label :deictic
+      = g.text_field :deictic
+    .field
+      = g.label :beat
+      = g.text_field :beat
   .actions
     = f.submit
 
