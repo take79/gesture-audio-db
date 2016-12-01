@@ -20,9 +20,6 @@ class DataController < ApplicationController
 
   # GET /data/1/edit
   def edit
-    if @datum.gesture_tag.nil?
-      @datum.build_gesture_tag
-    end
   end
 
   # POST /data
