@@ -4,7 +4,9 @@ class DataController < ApplicationController
   # GET /data
   # GET /data.json
   def index
-    @data = Datum.all
+    #@data = Datum.all
+    @q = Datum.search(params[:q])
+    @data = @q.result(distinct: true)
   end
 
   # GET /data/1

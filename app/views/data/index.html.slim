@@ -2,11 +2,24 @@ p#notice
   = notice
 
 h1 Listing Data
+
+= search_form_for @q do |f|
+  .field
+    = f.label :name
+    = f.search_field :name_cont
+  .field
+    = f.label :topic_id
+    = f.collection_select :topic_id_eq, Topic.all, :id, :name, include_blank: true
+  .field
+    = f.label :actor_id
+    = f.collection_select :actor_id_eq, Actor.all, :id, :name, include_blank: true
+  .field
+    = f.label :keywords
+    = f.search_field :keywords_cont
+  .actions
+    = f.submit
+
 table
-  thead
-    tr
-      th Name
-      - content_tag :th, colspan: "3"
   tbody
     tr
       th id
