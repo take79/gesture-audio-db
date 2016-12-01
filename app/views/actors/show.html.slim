@@ -1,0 +1,14 @@
+p#notice
+  = notice
+
+p
+  strong Actor:
+  p Name:#{@actor.name}
+  p Gender:#{@actor.gender}
+  p Age:#{@actor.age}
+
+= link_to 'Edit', edit_actor_path(@actor)
+br
+= link_to 'all actors', actors_path
+br
+= link_to 'Back', data_path
