@@ -21,6 +21,28 @@
   .field
     = f.label :gesture
     = f.file_field :gesture
+  .field
+    = f.label :actor
+    = f.collection_select :actor_id, Actor.all, :id, :id
+  .field
+    = f.label :topic
+    = f.collection_select :topic_id, Topic.all, :id, :name
+  .field
+    = f.label :keywords
+    = f.text_field :keywords
+  = f.fields_for :gesture_tag do |g|
+    .field
+      = g.label:iconic
+      = g.text_field :iconic
+    .field
+      = g.label :metaphoric
+      = g.text_field :metaphoric
+    .field
+      = g.label :deictic
+      = g.text_field :deictic
+    .field
+      = g.label :beat
+      = g.text_field :beat
   .actions
     = f.submit
 

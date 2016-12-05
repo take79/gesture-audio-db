@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).ready( function(){
   //console.log(document.getElementById("datum_video"));
   document.getElementById("datum_video").addEventListener('change', function (event) {
     var URL = URL || webkitURL;

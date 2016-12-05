@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).ready( function(){
   var v = document.getElementById("video");
   var a = document.getElementById("audio");
   $(document).on('click', '#av-sync-play', function(){

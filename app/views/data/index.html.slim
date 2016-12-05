@@ -2,16 +2,43 @@ p#notice
   = notice
 
 h1 Listing Data
+
+= search_form_for @q do |f|
+  .field
+    = f.label :name
+    = f.search_field :name_cont
+  .field
+    = f.label :topic_id
+    = f.collection_select :topic_id_eq, Topic.all, :id, :name, include_blank: true
+  .field
+    = f.label :actor_id
+    = f.collection_select :actor_id_eq, Actor.all, :id, :name, include_blank: true
+  .field
+    = f.label :keywords
+    = f.search_field :keywords_cont
+  .actions
+    = f.submit
+
 table
-  thead
-    tr
-      th Name
-      - content_tag :th, colspan: "3"
   tbody
+    tr
+      th id
+      th name
+      th topic
+      th actor
+      th keywords
     - @data.each do |d|
-      tr
+      tr align="right"
+        td
+          = d.id
         td
           = d.name
+        td
+          = d.topic.try(:id) || "nil"
+        td
+          = d.actor.try(:id) || "nil"
+        td
+          = d.try(:keywords) || "none"
         td
           = link_to 'Show', d
         td
@@ -20,33 +47,18 @@ table
           = link_to 'Destroy', d, method: :delete, data: { confirm: 'Are you sure?' }
 
 br
+= paginate(@data)
+
+br
 
 = link_to 'New Datum', new_datum_path
+br
+= link_to 'New Actor', new_actor_path
+br
+= link_to 'New Topic', new_topic_path
 
-/ <p id="notice"><%= notice %></p>
-
-/ <h1>Listing Data</h1>
-
-/ <table>
-/   <thead>
-/     <tr>
-/       <th>Name</th>
-/       <th colspan="3"></th>
-/     </tr>
-/   </thead>
-
-/   <tbody>
-/     <% @data.each do |datum| %>
-/       <tr>
-/         <td><%= datum.name %></td>
-/         <td><%= link_to 'Show', datum %></td>
-/         <td><%= link_to 'Edit', edit_datum_path(datum) %></td>
-/         <td><%= link_to 'Destroy', datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-/       </tr>
-/     <% end %>
-/   </tbody>
-/ </table>
-
-/ <br>
-
-/ <%= link_to 'New Datum', new_datum_path %>
+br
+br
+= link_to 'Actors', actors_path
+br
+= link_to 'Topics', topics_path

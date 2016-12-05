@@ -2,8 +2,22 @@ p#notice
   = notice
 
 p
-  strong Name:
-  = @datum.name
+  strong Data:
+  p Name:#{@datum.name}
+  p 
+    = link_to "Actor:#{@datum.actor.try(:name)}", actor_path(@datum.actor) || "nil"
+  p 
+    = link_to "Topic:#{@datum.topic.try(:name)}", topic_path(@datum.topic) || "nil"
+  p Tags:
+    Iconic:
+      #{@datum.gesture_tag.try(:iconic)}
+    | Metaphoric:
+      #{@datum.gesture_tag.try(:metaphoric)}
+    | Deictic:
+      #{@datum.gesture_tag.try(:deictic)}
+    | Beat:
+      #{@datum.gesture_tag.try(:beat)}
+  p Keywords: #{@datum.keywords}
 
 - if @datum.gesture?
   .container

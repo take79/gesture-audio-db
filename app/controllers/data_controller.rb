@@ -4,7 +4,9 @@ class DataController < ApplicationController
   # GET /data
   # GET /data.json
   def index
-    @data = Datum.all
+    #@data = Datum.all
+    @q = Datum.search(params[:q])
+    @data = @q.result(distinct: true).page(params[:page]).per(20)
   end
 
   # GET /data/1
@@ -15,6 +17,7 @@ class DataController < ApplicationController
   # GET /data/new
   def new
     @datum = Datum.new
+    @datum.build_gesture_tag
   end
 
   # GET /data/1/edit
@@ -69,6 +72,6 @@ class DataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def datum_params
-      params.require(:datum).permit(:name, :audio, :video, :gesture)
+      params.require(:datum).permit(:name, :audio, :video, :gesture, :actor_id, :topic_id, :gesture_tag_id, :keywords, gesture_tag_attributes: [:iconic, :metaphoric, :deictic, :beat])
     end
 end
