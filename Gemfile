@@ -53,7 +53,9 @@ gem 'font-awesome-rails'
 # nouislider
 gem 'nouislider-rails'
 
-gem 'ransack'
+gem 'devise'
+gem 'dotenv-rails'
+gem 'seed-fu'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
