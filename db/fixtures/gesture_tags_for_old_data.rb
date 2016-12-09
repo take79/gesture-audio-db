@@ -1,6 +1,6 @@
-Data.all.each do |datum|
-  if gesture_tag.exists?(datum_id: datum.id)
+Datum.all.each do |datum|
+  if GestureTag.exists?(datum_id: datum.id)
   else
-    datum.build_gesture_tag
+    datum.build_gesture_tag.save
   end
 end

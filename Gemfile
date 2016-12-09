@@ -55,6 +55,7 @@ gem 'nouislider-rails'
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'seed-fu'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
