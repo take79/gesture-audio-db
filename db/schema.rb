@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20161208090418) do
     t.string   "name",       limit: 255
     t.string   "gender",     limit: 255
     t.integer  "age",        limit: 4
-    t.integer  "datum_id",   limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -55,7 +54,6 @@ ActiveRecord::Schema.define(version: 20161208090418) do
   create_table "topics", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.datetime "recorded_date"
-    t.integer  "datum_id",      limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
