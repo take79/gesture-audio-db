@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @datum %> |
+<%= link_to 'Destroy', @datum, method: :delete, data: { confirm: 'Are you sure you want to delete this data?'} %> |
 <%= link_to 'Back', data_path %>
