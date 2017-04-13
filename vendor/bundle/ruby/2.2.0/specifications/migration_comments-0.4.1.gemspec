@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["pinny@mwitz.com"]
   s.homepage = "https://github.com/pinnymz/migration_comments"
   s.rubyforge_project = "migration_comments"
-  s.rubygems_version = "2.4.8"
+  s.rubygems_version = "2.4.5.1"
   s.summary = "Comments for your migrations"
 
-  s.installed_by_version = "2.4.8" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.4.5.1" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
