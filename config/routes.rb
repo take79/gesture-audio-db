@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :gesture_tags
   resources :topics
   resources :actors
-  resources :data
+  resources :data do
+    member do
+      get 'fetch_gesture'
+      get 'fetch_audio'
+    end
+  end
   get 'generation', to: 'generation#execute'
   root 'data#index'
 
