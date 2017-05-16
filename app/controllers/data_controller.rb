@@ -1,6 +1,6 @@
 class DataController < ApplicationController
-  before_action :set_datum, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :set_datum, only: [:show, :edit, :update, :destroy, :fetch_gesture, :fetch_audio]
+  before_action :authenticate_user!, except: [:fetch_gesture, :fetch_audio]
 
   # GET /data
   # GET /data.json
@@ -63,6 +63,18 @@ class DataController < ApplicationController
       format.html { redirect_to data_url, notice: 'Datum was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def fetch_gesture
+    filepath = @datum.gesture.path
+    stat = File::stat(filepath)
+    send_file(filepath, :filename => 'gesture.bvh', :length => stat.size)
+  end
+
+  def fetch_audio
+    filepath = @datum.audio.path
+    stat = File::stat(filepath)
+    send_file(filepath, :filename => 'audio.bvh', :length => stat.size)
   end
 
   private

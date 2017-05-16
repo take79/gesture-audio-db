@@ -5,8 +5,15 @@ Rails.application.routes.draw do
   resources :gesture_tags
   resources :topics
   resources :actors
-  resources :data
+  resources :data do
+    member do
+      get 'fetch_gesture'
+      get 'fetch_audio'
+    end
+  end
+  get 'generation', to: 'generation#execute'
   root 'data#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
